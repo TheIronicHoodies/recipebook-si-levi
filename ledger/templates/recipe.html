@@ -54,11 +54,13 @@
     <body>
         <header>
             <span>Recipe Book</span>
-            <form class="logout" method="POST" action="{% url 'logout' %}">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Logout</button>
-            </form>
+            {% if request.user.is_authenticated %}
+                <form class="logout" method="POST" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Logout</button>
+                </form>
+            {% endif %}
         </header>
         {% block content %}{% endblock %}
     </body>

@@ -1,0 +1,17 @@
+<!--not inheriting from recipe.html as to not fuck up both forms. I don't have the sanity
+to fix that right now.-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add Recipe</title>
+    </head>
+    <body>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <button type ="submit">Submit</button>
+        </form>
+    </body>
+</html>
