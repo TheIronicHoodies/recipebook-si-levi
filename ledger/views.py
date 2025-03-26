@@ -24,7 +24,7 @@ class RecipesAdd(CreateView):
     template_name = 'recipe_add.html'
 
 
-class RecipesUpload(CreateView):
+class RecipesUpload(UpdateView):
     model = Recipe
     form_class = RecipeImageForm
     template_name = "recipe_upload.html"
